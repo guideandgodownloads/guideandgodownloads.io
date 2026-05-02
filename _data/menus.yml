@@ -1,0 +1,19 @@
+# Top Menu
+topmenu:
+
+- title: Buy Checklist
+  url: "#shop"
+
+- title: Instagram
+  url: "https://www.instagram.com/guideandgodownloads/"
+  external: true
+
+# Footer Menu
+footermenu:
+
+- title: Buy Checklist
+  url: "#shop"
+
+- title: Instagram
+  url: "https://www.instagram.com/guideandgodownloads/"
+  external: true

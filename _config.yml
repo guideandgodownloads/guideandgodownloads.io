@@ -1,0 +1,50 @@
+title: "Guide&Go"
+email: ""
+timezone: America/Los_Angeles
+baseurl: ""
+url: "https://guideandgodownloads.io"
+permalink: "/:title/"
+logo:
+favicon: 'assets/images/favicon.ico'
+author: Guide and Go Downloads
+paginate: 30
+disqus:
+locale: en_us
+lang: en_us
+description: "Digital marketing checklists built by a 16-year industry expert. SEO, paid social, PPC, AI search, and more that tell you exactly what to do and why."
+feed_items: 10
+feed_update_period: daily
+feed_update_frequency: 1
+markdown: kramdown
+kramdown:
+  syntax_highlighter_opts:
+    disable: true
+sass:
+  sass_dir: _sass
+  style: :compressed
+ganalytics:
+
+# Authors
+authors:
+  guideandgo:
+    name: Guide & Go
+    display_name: Guide & Go
+    avatar: 'assets/images/logo.png'
+    email: ""
+    web: https://www.instagram.com/guideandgodownloads/
+    twitter:
+    description: "Digital marketing checklists from 16 years of in-the-trenches experience."
+
+# Social
+social:
+  instagram: https://www.instagram.com/guideandgodownloads/
+  facebook:
+  twitter:
+
+# Plugins
+plugins:
+- jekyll-paginate
+- jekyll-sitemap
+- jekyll-feed
+- jekyll-seo-tag
+- jekyll-archives
