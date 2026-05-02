@@ -1,8 +1,8 @@
 title: "Guide&Go"
 email: ""
 timezone: America/Los_Angeles
-baseurl: ""
-url: "https://guideandgodownloads.io"
+baseurl: "/guideandgodownloads.io"
+url: "https://guideandgodownloads.github.io"
 permalink: "/:title/"
 logo:
 favicon: 'assets/images/favicon.ico'

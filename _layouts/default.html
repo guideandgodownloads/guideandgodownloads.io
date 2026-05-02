@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="icon" href="{{ site.baseurl }}/{{site.favicon}}">
+<link rel="icon" href="{{ site.favicon | relative_url }}">
 
 <title>{{ page.title }} | {{site.title}}</title>
 
 {% seo %}
 
-<link href="{{ site.baseurl }}/assets/css/theme.css" rel="stylesheet">
+<link href="{{ '/assets/css/theme.css' | relative_url }}" rel="stylesheet">
 
 <!-- custom CSS - Remove this if you don't use it or choose to customize the stylesheet with sass-->
-<link href="{{ site.baseurl }}/assets/css/custom.css" rel="stylesheet">
+<link href="{{ '/assets/css/custom.css' | relative_url }}" rel="stylesheet">
 <!-- custom CSS end-->
     
 {% if jekyll.environment == "production" %}       
@@ -38,9 +38,9 @@ gtag('config', '{{site.ganalytics}}');
     <nav class="navbar navbar-expand-lg">
         <div class="container">
 
-          <a class="navbar-brand text-dark font-weight-bold big d-flex align-items-center" href="{{site.baseurl}}/">
+          <a class="navbar-brand text-dark font-weight-bold big d-flex align-items-center" href="{{ '/' | relative_url }}">
           {% if site.logo %}
-          <img class="mr-2" src="{{site.baseurl}}/{{site.logo}}" alt="logo"> 
+          <img class="mr-2" src="{{ site.logo | relative_url }}" alt="logo"> 
           {% else %}
           <span>{{ site.title }}</span>
           {% endif %}
@@ -70,7 +70,13 @@ gtag('config', '{{site.ganalytics}}');
             <ul class="navbar-nav ml-auto font-weight-bold d-flex align-items-center">
               {% for item in site.data.menus.topmenu %}
               <li class="nav-item">
-                <a class="nav-link px-3 {% if item.class %}{{item.class}}{% endif %}" href="{% unless item.external %}{{site.baseurl}}/{% endunless %}{{item.url}}" alt="{{item.title}}">{{item.title}}</a>
+                {% if item.external %}
+                <a class="nav-link px-3 {% if item.class %}{{item.class}}{% endif %}" href="{{ item.url }}" alt="{{item.title}}">{{item.title}}</a>
+                {% elsif item.url contains '#' %}
+                <a class="nav-link px-3 {% if item.class %}{{item.class}}{% endif %}" href="{{ item.url }}" alt="{{item.title}}">{{item.title}}</a>
+                {% else %}
+                <a class="nav-link px-3 {% if item.class %}{{item.class}}{% endif %}" href="{{ item.url | relative_url }}" alt="{{item.title}}">{{item.title}}</a>
+                {% endif %}
               </li>
               {% endfor %}
             </ul>
@@ -94,7 +100,13 @@ gtag('config', '{{site.ganalytics}}');
   <ul class="p-0 mb-1 small">
     {% for item in site.data.menus.footermenu %}
     <li>
-      <a href="{% unless item.external %}{{site.baseurl}}/{% endunless %}{{item.url}}" alt="{{item.title}}">{{item.title}}</a>
+      {% if item.external %}
+      <a href="{{ item.url }}" alt="{{item.title}}">{{item.title}}</a>
+      {% elsif item.url contains '#' %}
+      <a href="{{ item.url }}" alt="{{item.title}}">{{item.title}}</a>
+      {% else %}
+      <a href="{{ item.url | relative_url }}" alt="{{item.title}}">{{item.title}}</a>
+      {% endif %}
     </li>
     {% endfor %}
     </ul>
@@ -105,9 +117,9 @@ gtag('config', '{{site.ganalytics}}');
 
 <!-- JavaScript
 ================================================== -->    
-<script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>   
-<script src="{{ site.baseurl }}/assets/js/bootstrap.min.js"></script>   
-<script src="{{ site.baseurl }}/assets/js/theme.js"></script>    
+<script src="{{ '/assets/js/jquery.min.js' | relative_url }}"></script>   
+<script src="{{ '/assets/js/bootstrap.min.js' | relative_url }}"></script>   
+<script src="{{ '/assets/js/theme.js' | relative_url }}"></script>    
     
 </body>
     
